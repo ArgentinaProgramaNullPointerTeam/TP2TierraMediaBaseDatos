@@ -5,18 +5,14 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
 public class ComparadorDeProductosTest {
 	Usuario u1;
-	Atraccion a1;
-	Atraccion a2;
-	Atraccion a3;
-	Atraccion a4;
-	Promocion p1;
-	Promocion p2;
-	Promocion p3;
+	Atraccion a1, a2, a3, a4;
+	Promocion p1, p2, p3;
 
 	@Before
 	public void setup() {
@@ -43,7 +39,17 @@ public class ComparadorDeProductosTest {
 		p3 = new PromocionAXB("Pack tres", 3, packTres, "AXB", "a3");
 
 	}
-
+	@After
+	public void tearDown() {
+		u1 = null;
+		a1 = null;
+		a2 = null;
+		a3 = null;
+		a4 = null;
+		p1 = null;
+		p2 = null;
+		p3 = null;
+	}
 	@Test
 	public void testCriterio1() {
 		ComparadorDeProductos compDeProd = new ComparadorDeProductos(u1.getAtraccionPreferida());

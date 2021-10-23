@@ -67,9 +67,11 @@ public class AtraccionTests {
 	@Test
 	public void noEstaIncluidaTest() {
 		Producto atraccionIgual = new Atraccion ("Moria", 10, 2, 6, TipoAtraccion.AVENTURA);
-		Producto atraccionNoIgual = new Atraccion("Isengard", 10, 2.5, 23, TipoAtraccion.AVENTURA);
-
 		assertTrue(atraccion.esOContiene(atraccionIgual));
+	}
+	@Test
+	public void noEstaIncluidaTest2() {
+		Producto atraccionNoIgual = new Atraccion("Isengard", 10, 2.5, 23, TipoAtraccion.AVENTURA);
 		assertFalse(atraccion.esOContiene(atraccionNoIgual));
 	}
 }

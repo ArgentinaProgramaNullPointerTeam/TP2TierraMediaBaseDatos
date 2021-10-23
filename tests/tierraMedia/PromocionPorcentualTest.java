@@ -72,9 +72,11 @@ public class PromocionPorcentualTest {
 	@Test
 	public void noEstaIncluidaTest() {
 		Producto atraccionIncluida = new Atraccion("Rivendel", 10, 2, 6, TipoAtraccion.AVENTURA);
-		Producto atraccionNoIncluida = new Atraccion("Isengard", 10, 2.5, 23, TipoAtraccion.AVENTURA);
-
 		assertTrue(promo.esOContiene(atraccionIncluida));
+	}
+	@Test
+	public void noEstaIncluidaTest2() {
+		Producto atraccionNoIncluida = new Atraccion("Isengard", 10, 2.5, 23, TipoAtraccion.AVENTURA);
 		assertFalse(promo.esOContiene(atraccionNoIncluida));
 	}
 	@Test
