@@ -1,0 +1,14 @@
+Su itinerario es: 
+
+Atracción disponible para adquirir: Erebor
+Costo total: 12 monedas.
+Tiempo total: 3.0 horas 
+
+Atracción disponible para adquirir: Abismo de Helm
+Costo total: 5 monedas.
+Tiempo total: 2.0 horas 
+
+ Dinero total invertido: 17 monedas.
+ 
+ Tiempo total necesario: 5.0 horas.
+ 
