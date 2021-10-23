@@ -14,7 +14,7 @@ public class UsuarioTests {
 	Usuario usuario, u1;
 	Atraccion a1, a2, a3, a4;
 	Promocion p1, p2, p3, p4;
-	Producto sugerencia1, sugerencia2, sugerencia3;
+
 
 	@Before
 	public void setup() {
@@ -46,10 +46,6 @@ public class UsuarioTests {
 		packCuatro.add(a2);
 		packCuatro.add(a4);
 		p4 = new PromocionAbsoluta("Pack Cuatro", 2, packCuatro, "Absoluta", "5");
-		
-		sugerencia1 = new Atraccion("Edoras", 5, 0.5, 2, TipoAtraccion.AVENTURA);
-		sugerencia2 = new Atraccion("Isengard", 5, 1, 2, TipoAtraccion.AVENTURA);
-		sugerencia3 = new Atraccion("Rivendel", 10, 1, 2, TipoAtraccion.AVENTURA);
 	}
 
 	@After
@@ -64,9 +60,6 @@ public class UsuarioTests {
 		p2 = null;
 		p3 = null;
 		p4 = null;
-		sugerencia1 = null;
-		sugerencia2 = null;
-		sugerencia3 = null;
 	}
 
 	@Test
@@ -106,30 +99,11 @@ public class UsuarioTests {
 		Producto sugerencia = new Atraccion("Edoras", 60, 0.5, 2, TipoAtraccion.AVENTURA);
 		assertFalse(usuario.puedeComprar(sugerencia));
 	}
-
 	@Test
 	public void noPuedeComprarTest2() {// El usuario no tiene suficiente tiempo
 		Producto sugerencia = new Atraccion("Isengard", 5, 4, 2, TipoAtraccion.AVENTURA);
 		assertFalse(usuario.puedeComprar(sugerencia));
 	}
-
-	@Test
-	public void gastoCorrectoTiempo() {
-		//Verifica el gasto correcto de tiempo y dinero.
-		usuario.comprar(sugerencia1);
-		usuario.comprar(sugerencia2);
-		usuario.comprar(sugerencia3);
-		assertEquals(2.5, usuario.getTiempoGastado(), 0);
-	}
-	@Test
-	public void gastoCorrectoMonedas() {
-		//Verifica el gasto correcto de tiempo y dinero.
-		usuario.comprar(sugerencia1);
-		usuario.comprar(sugerencia2);
-		usuario.comprar(sugerencia3);
-		assertEquals(20, usuario.getMonedasGastadas());
-	}
-
 	@Test
 	public void atraccionEnPromocion() {
 		//Verifica que no pueda comprar atracciones o promociones repetidas.

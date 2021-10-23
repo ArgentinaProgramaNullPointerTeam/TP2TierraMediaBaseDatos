@@ -62,9 +62,10 @@ public class App {
 			}
 			
 			
-			String listaCompra= "Su itinerario es: \n"  + cadaUsuario.getListaCompra().toString()
-					+"\n Dinero total invertido: " + cadaUsuario.getMonedasGastadas()+" monedas.\n "
-					+"\n Tiempo total necesario: " + cadaUsuario.getTiempoGastado() + " horas.\n ";
+			Itinerario itinerario = cadaUsuario.getItinerario();
+			String listaCompra= "Su itinerario es: \n"  + itinerario.getItinerario().toString()
+					+"\n Dinero total invertido: " + itinerario.getCostoItinerario()+" monedas.\n "
+					+"\n Tiempo total necesario: " + itinerario.getDuracionItinerario() + " horas.\n ";
 	    	 ArrayList<String> datos = new ArrayList<String>();
 	 		datos.add(listaCompra);
 	 		AdministradorDeArchivos.guardarArchivo(datos, cadaUsuario.getNombre());
