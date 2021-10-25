@@ -1,0 +1,70 @@
+CREATE TABLE "usuario" (
+	"idusuario"	INTEGER,
+	"nombre"	TEXT,
+	"dineroDisponible"	INTEGER,
+	"tiempoDisponible"	INTEGER,
+	"tipoatraccion"	TEXT,
+	PRIMARY KEY("idusuario")
+);
+
+
+INSERT INTO usuario(idusuario, nombre, dineroDisponible, tiempoDisponible, tipoatraccion) VALUES
+
+ ('1', 'Eowyn', '10', '8','Aventura'),
+ ('2', 'Gandalf', '100', '5', 'Paisaje'),
+ ('3', 'Sam', '36', '8','Degustacion'), 
+ ('4', 'Galandriel', '5', '6','Paisaje'),
+ ('5', 'Millonario', '1000', '1000', 'Aventura');
+
+
+
+CREATE TABLE "atraccion" (
+	"idAtraccion"	INTEGER NOT NULL UNIQUE,
+	"nombre"	TEXT NOT NULL UNIQUE,
+	"costoVisita"	INTEGER NOT NULL,
+	"cupo"	INTEGER NOT NULL,
+	"tiempoVisita"	INTEGER NOT NULL,
+	"tipoAtraccion"	TEXT,
+	PRIMARY KEY("idAtraccion")
+
+INSERT INTO atraccion(idAtraccion, nombre, costoVisita,cupo,tiempoVisita,tipoAtraccion) VALUES
+ ('1', 'Moria', '10', '6', '2', 'Aventura'),
+  ('2', 'Minas Tirith', '5', '25', '2.5', 'Paisaje'),
+   ('3', 'La comarca', '3', '150', '6.5', 'Degustacion'),
+ ('4', 'Mordor', '25', '4', '3', 'Aventura'), 
+ ('5', 'Abismo de Helm', '5', '15', '2', 'Paisaje'),
+  ('6', 'Lothlórien', '35', '30', '1', 'Degustacion'),
+ ('7', 'Erebor', '12', '32', '3', 'Paisaje'), 
+ ('8', 'Bosque Negro', '3', '12', '4','Aventura' )                                                                                                                             ('9', 'La Acotada', '5', '3', '1', 'Aventura');
+
+
+CREATE TABLE "promociones" (
+	"idpromociones"	INTEGER NOT NULL UNIQUE,
+	"nombre"	TEXT,
+	"tipoDePromocion"	TEXT,
+	"descuentoAXB"	INTEGER,
+	"descuentoPorcentual"	INTEGER,
+	"descuentoAbsoluta"	TEXT,
+	"tipoAtraccion"	INTEGER,
+	"atraccion1"	TEXT,
+	"atraccion2"	TEXT,
+	"atraccion3"	TEXT,
+	PRIMARY KEY("idpromociones" AUTOINCREMENT)
+);
+
+
+
+INSERT INTO promociones(idpromociones,nombre,tipoDePromocion, descuentoAXB,descuentoPorcentual, descuentoAbsoluta, tipoAtraccion,atraccion1, atraccion2, atraccion3) VALUES
+ ('1', 'Pack Aventura', 'Porcentual', '', '0.2', '', 'Bosque Negro','Mordor','','Aventura' ),
+   ('2', 'Pack Degustacion', 'Absoluta', '', '', '36', 'Lothlórien','La comarca','','Degustacion' ),
+  ('3', 'Pack Paisaje', 'AXB', 'Gratis', '', '', 'Minas Tirith','Abismo de Helm','Erebor','Paisaje' ),
+  ('4', 'Pack Aventura Recarcado', 'AXB', 'Gratis', '', '', 'Bosque Negro','Mordor','La acotada','Aventura' );
+
+
+
+
+
+CREATE TABLE "atraccionesPorPromocion" (
+	"idAtraccion"	INTEGER,
+	"idpromociones"	INTEGER
+);
