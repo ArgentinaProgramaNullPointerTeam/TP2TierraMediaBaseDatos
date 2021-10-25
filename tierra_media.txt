@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS "itinerario" (
 	"id_usuario"	INTEGER,
 	"id_atraccion"	INTEGER,
 	"id_promocion"	INTEGER,
-	PRIMARY KEY("id_itinerario" AUTOINCREMENT),
+	PRIMARY KEY("id_itinerario"),
 	FOREIGN KEY("id_usuario") REFERENCES "usuario"("id_usuario"),
 	FOREIGN KEY("id_atraccion") REFERENCES "atraccion"("id_atraccion"),
 	FOREIGN KEY("id_promocion") REFERENCES "promocion"("id_promocion")
