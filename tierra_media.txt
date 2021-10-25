@@ -69,8 +69,8 @@ INSERT INTO promocion(nombre, tipo_promocion, descuento_AXB, tipo_atraccion, atr
 
 
 CREATE TABLE IF NOT EXISTS "atraccionesPorPromocion" (
-	"id_atraccion"	INTEGER,
-	"id_promocion"	INTEGER,
+	"id_atraccion"	INTEGER NOT NULL,
+	"id_promocion"	INTEGER NOT NULL,
 	FOREIGN KEY("id_atraccion") REFERENCES "atraccion"("id_atraccion"),
 	FOREIGN KEY("id_promocion") REFERENCES "promocion"("id_promocion")
 );
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS "atraccionesPorPromocion" (
 
 CREATE TABLE IF NOT EXISTS "itinerario" (
 	"id_itinerario"	INTEGER NOT NULL,
-	"id_usuario"	INTEGER,
+	"id_usuario"	INTEGER NOT NULL,
 	"id_atraccion"	INTEGER,
 	"id_promocion"	INTEGER,
 	PRIMARY KEY("id_itinerario"),
