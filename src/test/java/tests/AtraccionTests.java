@@ -6,6 +6,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Atraccion;
+import model.Producto;
+import model.TipoAtraccion;
+
 public class AtraccionTests {
 	
 	Atraccion atraccion;

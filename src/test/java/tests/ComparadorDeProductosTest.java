@@ -8,6 +8,15 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Atraccion;
+import model.ComparadorDeProductos;
+import model.Promocion;
+import model.PromocionAXB;
+import model.PromocionAbsoluta;
+import model.PromocionPorcentual;
+import model.TipoAtraccion;
+import model.Usuario;
+
 public class ComparadorDeProductosTest {
 	Usuario u1;
 	Atraccion a1;

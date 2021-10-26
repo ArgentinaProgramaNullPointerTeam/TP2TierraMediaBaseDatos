@@ -1,5 +1,4 @@
-
-package tierraMedia;
+package model;
 
 import java.util.List;
 

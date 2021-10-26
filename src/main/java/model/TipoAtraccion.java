@@ -1,4 +1,4 @@
-package tierraMedia;
+package model;
 
 public enum TipoAtraccion {
     AVENTURA,

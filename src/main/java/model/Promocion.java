@@ -1,4 +1,4 @@
-package tierraMedia;
+package model;
 
 public abstract class Promocion extends Producto {
 	

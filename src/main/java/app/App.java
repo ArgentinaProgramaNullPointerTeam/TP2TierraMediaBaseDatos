@@ -1,10 +1,17 @@
-package tierraMedia;
+package app;
 
 import java.util.ArrayList;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
+
+import model.Atraccion;
+import model.ComparadorDeProductos;
+import model.Itinerario;
+import model.Producto;
+import model.Promocion;
+import model.Usuario;
 
 public class App {
 	private static List<Usuario> usuarios = new ArrayList<Usuario>();
@@ -22,9 +29,9 @@ public class App {
 	}
 	public static void main(String[] args) {
 		
-		usuarios = AdministradorDeArchivos.leerUsuarios(); // Tiene q devolver un array de usuarios
-		atracciones = AdministradorDeArchivos.leerAtracciones();
-		promociones = AdministradorDeArchivos.leerPromociones(atracciones);
+		usuarios = model.AdministradorDeArchivos.leerUsuarios(); // Tiene q devolver un array de usuarios
+		atracciones = model.AdministradorDeArchivos.leerAtracciones();
+		promociones = model.AdministradorDeArchivos.leerPromociones(atracciones);
 
 		productos.addAll(promociones);
 		productos.addAll(atracciones);
@@ -68,7 +75,7 @@ public class App {
 					+"\n Tiempo total necesario: " + itinerario.getDuracionItinerario() + " horas.\n ";
 	    	 ArrayList<String> datos = new ArrayList<String>();
 	 		datos.add(listaCompra);
-	 		AdministradorDeArchivos.guardarArchivo(datos, cadaUsuario.getNombre());
+	 		model.AdministradorDeArchivos.guardarArchivo(datos, cadaUsuario.getNombre());
 	 		
 	 		System.out.println(saludoDespedida(cadaUsuario.getNombre())+
 					"\n Su archivo fue generado.------------------\n");

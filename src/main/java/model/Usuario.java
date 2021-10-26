@@ -1,4 +1,4 @@
-package tierraMedia;
+package model;
 
 /**
  * Clase que modela al usuario. Tiene un constructor con los parametros nombre,

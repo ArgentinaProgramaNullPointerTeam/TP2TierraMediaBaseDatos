@@ -8,6 +8,12 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Atraccion;
+import model.Producto;
+import model.Promocion;
+import model.PromocionAbsoluta;
+import model.TipoAtraccion;
+
 public class PromocionAbsolutaTest {
 
 	Atraccion atraccion1;

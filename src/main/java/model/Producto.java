@@ -1,4 +1,4 @@
-package tierraMedia;
+package model;
 
 //Clase abstracta y métodos abstractos
 //Hereda a las clases Atraccion y Promocion
