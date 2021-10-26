@@ -1,13 +1,14 @@
 package tierraMedia;
 
+import java.util.Objects;
+
 /**
- * Clase que modela a la atraccion Tiene un constructor con los
- * 
- * @param nombre, costoDeVisita, tiempoDeVisita, cupo y tipoAtraccion Tiene los
- * getter para nombre, costoDeVisita, tiempoDeVisita, cupo y
- * tipoAtraccion Tiene un metodo restarCupo, que resta 1 cupo
- * cuando se acepta una compra y hayCupo que indica si la
- * Atraccion tiene cupo o no.
+ * Clase que modela  la atraccion. Tiene un constructor con los @param nombre,
+ * costoDeVisita, tiempoDeVisita, cupo y tipoAtraccion Tiene los getter
+ * para nombre, costoDeVisita, tiempoDeVisita y tipoAtraccion.
+ * Tiene un metodo hayCupo que indica si la Atraccion tiene cupo o no
+ * y un metodo restarCupo que resta 1 cupo cuando se acepta una compra y
+ * hay cupo .
  */
 
 public class Atraccion extends Producto {
@@ -16,6 +17,7 @@ public class Atraccion extends Producto {
 	private double tiempoDeVisita;
 	private int cupo;
 	private TipoAtraccion tipoAtraccion;
+	
 
 	public Atraccion(String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, TipoAtraccion tipoAtraccion) {
 		this.nombre = nombre;
@@ -24,7 +26,7 @@ public class Atraccion extends Producto {
 		this.cupo = cupo;
 		this.tipoAtraccion = tipoAtraccion;
 	}
-
+	
 	@Override
 	public String getNombre() {
 		return nombre;
@@ -41,21 +43,8 @@ public class Atraccion extends Producto {
 	}
 
 	@Override
-	public int getCupo() {
-		return cupo;
-	}
-
-	@Override
-	public TipoAtraccion getTipo() {
+	public TipoAtraccion getTipoAtracciones() {
 		return tipoAtraccion;
-	}
-
-	public void restarCupo() throws Exception {
-		if (this.cupo > 0) {
-			this.cupo -= 1;
-		} else {
-			throw new Exception("No hay más cupo");
-		}
 	}
 
 	@Override
@@ -63,4 +52,57 @@ public class Atraccion extends Producto {
 		return this.cupo > 0;
 	}
 
+	@Override
+	public void restarCupo() {
+		if (this.cupo > 0) {
+			this.cupo -= 1;
+		}
+
+	}
+	
+	@Override
+	public boolean esPromocion () {
+		return false;
+	}
+	
+	public int getCupo () {
+		return this.cupo;
+	}
+
+	@Override
+	public String toString() {
+		return "Atraccion [nombre=" + nombre + ", costoDeVisita=" + costoDeVisita + ", tiempoDeVisita=" + tiempoDeVisita
+				+ ", cupo=" + cupo + ", tipoAtraccion=" + tipoAtraccion + "]";
+	}
+
+	@Override
+	public String  ofertas() {
+		return "Atracción disponible para adquirir: " + this.nombre +"\n"+
+				"Costo total: " + this.getCostoDeVisita()+ " monedas."+"\n"+
+				"Tiempo total: " + this.getTiempoDeVisita()+ " horas";
+	}
+
+	@Override
+	public boolean esOContiene(Producto otro) {
+		return this.equals(otro);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(costoDeVisita, cupo, nombre, tiempoDeVisita, tipoAtraccion);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Atraccion other = (Atraccion) obj;
+		return costoDeVisita == other.costoDeVisita && cupo == other.cupo && Objects.equals(nombre, other.nombre)
+				&& Double.doubleToLongBits(tiempoDeVisita) == Double.doubleToLongBits(other.tiempoDeVisita)
+				&& tipoAtraccion == other.tipoAtraccion;
+	}
 }
