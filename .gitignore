@@ -1,5 +1,5 @@
-target/
 bin/
+target/
 .settings/
 tierra_media.db
 tierra_media.sqbpro
