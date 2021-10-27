@@ -12,7 +12,6 @@ import model.Atraccion;
 import model.Producto;
 import model.Promocion;
 import model.PromocionPorcentual;
-import model.TipoAtraccion;
 
 public class PromocionPorcentualTest {
 
@@ -24,8 +23,8 @@ public class PromocionPorcentualTest {
 
 	@Before
 	public void setup() {
-		atraccion1 = new Atraccion("Rivendel", 10, 2, 6, TipoAtraccion.AVENTURA);
-		atraccion2 = new Atraccion("Hobbiton", 40, 3.5, 8, TipoAtraccion.AVENTURA);
+		atraccion1 = new Atraccion("Rivendel", 10, 2, 6, "Aventura");
+		atraccion2 = new Atraccion("Hobbiton", 40, 3.5, 8, "Aventura");
 
 		pack.add(atraccion1);
 		pack.add(atraccion2);
@@ -77,8 +76,8 @@ public class PromocionPorcentualTest {
 
 	@Test
 	public void noEstaIncluidaTest() {
-		Producto atraccionIncluida = new Atraccion("Rivendel", 10, 2, 6, TipoAtraccion.AVENTURA);
-		Producto atraccionNoIncluida = new Atraccion("Isengard", 10, 2.5, 23, TipoAtraccion.AVENTURA);
+		Producto atraccionIncluida = new Atraccion("Rivendel", 10, 2, 6, "Aventura");
+		Producto atraccionNoIncluida = new Atraccion("Isengard", 10, 2.5, 23, "Aventura");
 
 		assertTrue(promo.esOContiene(atraccionIncluida));
 		assertFalse(promo.esOContiene(atraccionNoIncluida));

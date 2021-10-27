@@ -14,7 +14,6 @@ import model.Promocion;
 import model.PromocionAXB;
 import model.PromocionAbsoluta;
 import model.PromocionPorcentual;
-import model.TipoAtraccion;
 import model.Usuario;
 
 public class ComparadorDeProductosTest {
@@ -29,11 +28,11 @@ public class ComparadorDeProductosTest {
 
 	@Before
 	public void setup() {
-		u1 = new Usuario("pepito", TipoAtraccion.AVENTURA, 100, 100);
-		a1 = new Atraccion("a1", 10, 3, 20, TipoAtraccion.AVENTURA);
-		a2 = new Atraccion("a2", 4, 2.5, 20, TipoAtraccion.AVENTURA);
-		a3 = new Atraccion("a3", 10, 5, 20, TipoAtraccion.AVENTURA);
-		a4 = new Atraccion("a4", 8, 4, 20, TipoAtraccion.DEGUSTACION);
+		u1 = new Usuario(1, "pepito", "Aventura", 100, 100);
+		a1 = new Atraccion("a1", 10, 3, 20, "Aventura");
+		a2 = new Atraccion("a2", 4, 2.5, 20, "Aventura");
+		a3 = new Atraccion("a3", 10, 5, 20, "Aventura");
+		a4 = new Atraccion("a4", 8, 4, 20, "Degustacion");
 
 		List<Atraccion> packUno = new ArrayList<Atraccion>();
 		packUno.add(a1);

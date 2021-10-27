@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import model.Atraccion;
 import model.Producto;
-import model.TipoAtraccion;
 
 public class AtraccionTests {
 	
@@ -16,7 +15,7 @@ public class AtraccionTests {
 
 	@Before
 	public void setUp() {
-		atraccion  = new Atraccion ("Moria", 10, 2, 6, TipoAtraccion.AVENTURA);
+		atraccion  = new Atraccion ("Moria", 10, 2, 6, "Aventura");
 		
 	}
 
@@ -70,8 +69,8 @@ public class AtraccionTests {
 	}
 	@Test
 	public void noEstaIncluidaTest() {
-		Producto atraccionIgual = new Atraccion ("Moria", 10, 2, 6, TipoAtraccion.AVENTURA);
-		Producto atraccionNoIgual = new Atraccion("Isengard", 10, 2.5, 23, TipoAtraccion.AVENTURA);
+		Producto atraccionIgual = new Atraccion ("Moria", 10, 2, 6, "Aventura");
+		Producto atraccionNoIgual = new Atraccion("Isengard", 10, 2.5, 23, "Aventura");
 
 		assertTrue(atraccion.esOContiene(atraccionIgual));
 		assertFalse(atraccion.esOContiene(atraccionNoIgual));

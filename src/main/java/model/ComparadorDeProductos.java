@@ -4,9 +4,9 @@ import java.util.Comparator;
 
 public class ComparadorDeProductos implements Comparator<Producto> {
 	// Atributo para guardar la atraccion preferida del usuario
-	private TipoAtraccion atraccionPreferida;
+	private String atraccionPreferida;
 
-	public ComparadorDeProductos(TipoAtraccion atraccionPreferida) {
+	public ComparadorDeProductos(String atraccionPreferida) {
 		// Constructor que recibe por parametro la atracción preferida del usuario
 		this.atraccionPreferida = atraccionPreferida;
 	}

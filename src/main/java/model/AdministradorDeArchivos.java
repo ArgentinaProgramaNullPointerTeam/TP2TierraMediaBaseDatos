@@ -5,41 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import dao.DAOFactory;
+import dao.UsuarioDAO;
+
 public class AdministradorDeArchivos {
 	public static void main(String[] args) {
 
 	}
 
 	public static List<Usuario> leerUsuarios() {
-		File f = new File("./archivosDeEntrada/usuarios.txt"); // creo el archivo con la ruta
-		Scanner sc; // abro el scanner
-		List<Usuario> usuarios = new ArrayList<Usuario>(); // creo el arraylist
-		String[] line; // aca guardo linea spliteada
-
-		try {
-			sc = new Scanner(f); // abrir el archivo con el scanner
-
-			while (sc.hasNext()) {
-				line = sc.nextLine().split("-"); // SEPARA LOS ATRIBUTOS - el split cada vez que encuentra un guion,
-													// devuelve un array
-				usuarios.add(new Usuario(line[0], // nombre de usuario nose parsea
-						TipoAtraccion.valueOf(line[1]), // parseo el enum tipo de atraccion para q lo pase a string
-						Integer.parseInt(line[2]), // presupuesto
-						Double.parseDouble(line[3])) // tiempo
-				);
-
-				line = null; // no dejar basura en line
-			}
-
-			sc.close();// cierro el scaner
-
-			// Tiramos este catch cuando no encuentra el archivo
-		} catch (FileNotFoundException e1) {
-			System.err.println(e1.getMessage());
-		} catch (NumberFormatException e2) {
-			System.err.println(e2.getMessage());
-		}
-		return usuarios;
+		UsuarioDAO usuarioDAO = DAOFactory.getUsuarioDAO();
+		return usuarioDAO.findAll();
 	}
 
 //LEER ARCHIVO DE ATRACCIONES
@@ -61,7 +37,7 @@ public class AdministradorDeArchivos {
 						Integer.parseInt(line[1]), // convierta en entero precio
 						Double.parseDouble(line[2]), // convierta en double las horas
 						Integer.parseInt(line[3]), // entero para cupos
-						TipoAtraccion.valueOf(line[4]) // parseo el enum tipo de atraccion para q lo pase a string desde
+						String.valueOf(line[4]) // parseo el enum tipo de atraccion para q lo pase a string desde
 														// el enum
 
 				));

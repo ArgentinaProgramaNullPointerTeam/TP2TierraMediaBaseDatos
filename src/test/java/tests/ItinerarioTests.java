@@ -9,7 +9,6 @@ import org.junit.Test;
 import model.Atraccion;
 import model.Itinerario;
 import model.Producto;
-import model.TipoAtraccion;
 import model.Usuario;
 
 public class ItinerarioTests {
@@ -17,10 +16,10 @@ public class ItinerarioTests {
 	Producto sugerencia1, sugerencia2, sugerencia3;
 	@Before
 	public void setup() {
-		usuario = new Usuario("Sam", TipoAtraccion.AVENTURA, 50, 3);
-		sugerencia1 = new Atraccion("Edoras", 5, 0.5, 2, TipoAtraccion.AVENTURA);
-		sugerencia2 = new Atraccion("Isengard", 5, 1, 2, TipoAtraccion.AVENTURA);
-		sugerencia3 = new Atraccion("Rivendel", 10, 1, 2, TipoAtraccion.AVENTURA);
+		usuario = new Usuario(1, "Sam", "Aventura", 50, 3);
+		sugerencia1 = new Atraccion("Edoras", 5, 0.5, 2, "Aventura");
+		sugerencia2 = new Atraccion("Isengard", 5, 1, 2, "Aventura");
+		sugerencia3 = new Atraccion("Rivendel", 10, 1, 2, "Aventura");
 	}
 	@After
 	public void tearDown() {

@@ -9,25 +9,31 @@ package model;
  * puedeComprar que retorna un boolean si tiene tiempo y dinero disponible.
  */
 public class Usuario {
+	private int id;
 	private String nombre;
-	private TipoAtraccion atraccionPreferida;
+	private String atraccionPreferida;
 	private int dineroDisponible;
 	private double tiempoDisponible;
 	private Itinerario itinerario;
 
-	public Usuario(String nombre, TipoAtraccion atraccionPreferida, int dineroDisponible, double tiempoDisponible) {
+	public Usuario(int id, String nombre, String atraccionPreferida, int dineroDisponible, double tiempoDisponible) {
+		this.id = id;
 		this.nombre = nombre;
 		this.atraccionPreferida = atraccionPreferida;
 		this.dineroDisponible = dineroDisponible;
 		this.tiempoDisponible = tiempoDisponible;
 		this.itinerario = new Itinerario();
 	}
-
+	
+	public int getId() {
+		return this.id;
+	}
+	
 	public String getNombre() {
 		return this.nombre;
 	}
 
-	public TipoAtraccion getAtraccionPreferida() {
+	public String getAtraccionPreferida() {
 		return atraccionPreferida;
 	}
 

@@ -16,10 +16,10 @@ public class Atraccion extends Producto {
 	private int costoDeVisita;
 	private double tiempoDeVisita;
 	private int cupo;
-	private TipoAtraccion tipoAtraccion;
+	private String tipoAtraccion;
 	
 
-	public Atraccion(String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, TipoAtraccion tipoAtraccion) {
+	public Atraccion(String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, String tipoAtraccion) {
 		this.nombre = nombre;
 		this.costoDeVisita = costoDeVisita;
 		this.tiempoDeVisita = tiempoDeVisita;
@@ -43,7 +43,7 @@ public class Atraccion extends Producto {
 	}
 
 	@Override
-	public TipoAtraccion getTipoAtracciones() {
+	public String getTipoAtracciones() {
 		return tipoAtraccion;
 	}
 

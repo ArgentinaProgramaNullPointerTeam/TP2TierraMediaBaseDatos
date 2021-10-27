@@ -57,7 +57,7 @@ public class PromocionAXB extends Promocion {
 	}
 
 	@Override
-	public TipoAtraccion getTipoAtracciones() {
+	public String getTipoAtracciones() {
 		return this.atracciones.get(0).getTipoAtracciones();
 	}
 
