@@ -2,7 +2,9 @@ package dao;
 
 import java.util.List;
 
-public interface UsuarioDAO {
-	public List<model.Usuario> findAll();
+import model.Usuario;
+
+public interface UsuarioDAO extends GenericDAO<Usuario>{
+	public List<Usuario> findAll();
 		
 }
