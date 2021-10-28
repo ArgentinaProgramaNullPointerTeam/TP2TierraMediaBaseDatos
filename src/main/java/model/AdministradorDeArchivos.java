@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import dao.AtraccionDAO;
 import dao.DAOFactory;
 import dao.UsuarioDAO;
 
@@ -21,40 +22,8 @@ public class AdministradorDeArchivos {
 //LEER ARCHIVO DE ATRACCIONES
 
 	public static List<Atraccion> leerAtracciones() {
-		File f = new File("./archivosDeEntrada/atracciones.txt"); // creo el archivo con la ruta
-		Scanner sc; // abro el scanner
-		List<Atraccion> atracciones = new ArrayList<Atraccion>();
-		String[] line; // aca guardo linea spliteada
-
-		try {
-			sc = new Scanner(f); // abrir el archivo con el scanner
-
-			while (sc.hasNext()) {
-				line = sc.nextLine().split("-"); // SEPARA LOS ATRIBUTOS - el split cada vez que encuentra un guion,
-													// devuelve un array
-
-				atracciones.add(new Atraccion(line[0], // primer atraccion ya string
-						Integer.parseInt(line[1]), // convierta en entero precio
-						Double.parseDouble(line[2]), // convierta en double las horas
-						Integer.parseInt(line[3]), // entero para cupos
-						String.valueOf(line[4]) // parseo el enum tipo de atraccion para q lo pase a string desde
-														// el enum
-
-				));
-
-				line = null;
-			}
-
-			sc.close();
-
-			// Tiramos este catch cuando no encuentra el archivo
-		} catch (FileNotFoundException e) {
-			System.err.println(e.getMessage());
-		} catch (NumberFormatException e) {
-			System.err.println(e.getMessage());
-		}
-
-		return atracciones;
+		AtraccionDAO atraccionDAO = DAOFactory.getAtraccionDAO();
+		return atraccionDAO.findAll();
 	}
 
 	@SuppressWarnings("resource")
