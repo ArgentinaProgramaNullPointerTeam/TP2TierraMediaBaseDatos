@@ -32,7 +32,7 @@ public class AtraccionDAOImpl implements AtraccionDAO {
 	public int update(Atraccion atraccion) {
 		int rows = 0;
 		try {
-			String sql = "UPDATE atraccion SET cupo_disponible = cupo -1";
+			String sql = "UPDATE atraccion SET cupo_disponible = cupo_disponible -1";
 			Connection conn = ConnectionProvider.getConnection();
 			PreparedStatement statement = conn.prepareStatement(sql);
 			
