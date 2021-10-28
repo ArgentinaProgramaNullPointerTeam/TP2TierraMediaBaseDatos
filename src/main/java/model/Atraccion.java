@@ -12,6 +12,7 @@ import java.util.Objects;
  */
 
 public class Atraccion extends Producto {
+	private int id;
 	private String nombre;
 	private int costoDeVisita;
 	private double tiempoDeVisita;
@@ -19,12 +20,17 @@ public class Atraccion extends Producto {
 	private String tipoAtraccion;
 	
 
-	public Atraccion(String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, String tipoAtraccion) {
+	public Atraccion(int id, String nombre, int costoDeVisita, double tiempoDeVisita, int cupo, String tipoAtraccion) {
+		this.id = id;
 		this.nombre = nombre;
 		this.costoDeVisita = costoDeVisita;
 		this.tiempoDeVisita = tiempoDeVisita;
 		this.cupo = cupo;
 		this.tipoAtraccion = tipoAtraccion;
+	}
+	
+	public int getId() {
+		return id;
 	}
 	
 	@Override
