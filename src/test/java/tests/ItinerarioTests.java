@@ -17,9 +17,9 @@ public class ItinerarioTests {
 	@Before
 	public void setup() {
 		usuario = new Usuario(1, "Sam", "Aventura", 50, 3);
-		sugerencia1 = new Atraccion("Edoras", 5, 0.5, 2, "Aventura");
-		sugerencia2 = new Atraccion("Isengard", 5, 1, 2, "Aventura");
-		sugerencia3 = new Atraccion("Rivendel", 10, 1, 2, "Aventura");
+		sugerencia1 = new Atraccion(1, "Edoras", 5, 0.5, 2, "Aventura");
+		sugerencia2 = new Atraccion(1, "Isengard", 5, 1, 2, "Aventura");
+		sugerencia3 = new Atraccion(3, "Rivendel", 10, 1, 2, "Aventura");
 	}
 	@After
 	public void tearDown() {

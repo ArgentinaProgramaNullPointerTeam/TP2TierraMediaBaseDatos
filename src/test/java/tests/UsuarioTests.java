@@ -30,10 +30,10 @@ public class UsuarioTests {
 		usuario = new Usuario(1, "Sam", "Aventura", 50, 3);
 		u1 = new Usuario(2, "pepito", "Aventura", 100, 100);
 
-		a1 = new Atraccion("a1", 10, 3, 20, "Aventura");
-		a2 = new Atraccion("a2", 4, 2.5, 20, "Aventura");
-		a3 = new Atraccion("a3", 2, 1, 20, "Aventura");
-		a4 = new Atraccion("a4", 8, 4, 20, "Aventura");
+		a1 = new Atraccion(1, "a1", 10, 3, 20, "Aventura");
+		a2 = new Atraccion(2, "a2", 4, 2.5, 20, "Aventura");
+		a3 = new Atraccion(3, "a3", 2, 1, 20, "Aventura");
+		a4 = new Atraccion(4, "a4", 8, 4, 20, "Aventura");
 
 		List<Atraccion> packUno = new ArrayList<Atraccion>();
 		packUno.add(a1);
@@ -79,7 +79,7 @@ public class UsuarioTests {
 	@Test
 	public void comprarTestDinero() {
 		//Verifica que al comprar, descuente bien el dinero y el tiempo.
-		Producto sugerenciaAceptada = new Atraccion("Rivendel", 20, 1.5, 2, "Aventura");
+		Producto sugerenciaAceptada = new Atraccion(5, "Rivendel", 20, 1.5, 2, "Aventura");
 		usuario.comprar(sugerenciaAceptada);
 		int dineroDispObtenido = usuario.getDineroDisponible();
 		int dineroDispEsperado = 30;
@@ -89,7 +89,7 @@ public class UsuarioTests {
 	@Test
 	public void comprarTestTiempo() {
 		//Verifica que al comprar, descuente bien el dinero y el tiempo.
-		Producto sugerenciaAceptada = new Atraccion("Rivendel", 20, 1.5, 2, "Aventura");
+		Producto sugerenciaAceptada = new Atraccion(5, "Rivendel", 20, 1.5, 2, "Aventura");
 		usuario.comprar(sugerenciaAceptada);
 		double tiempoDispObtenido = usuario.getTiempoDisponible();
 		double tiempoDispEsperado = 1.5;
@@ -99,18 +99,18 @@ public class UsuarioTests {
 	@Test
 	public void puedeComprarTest() {
 		//Verifica que el usuario pueda comprar una sugerencia.
-		Producto sugerencia = new Atraccion("Hobbiton", 10, 0.5, 2, "Aventura");
+		Producto sugerencia = new Atraccion(6, "Hobbiton", 10, 0.5, 2, "Aventura");
 		assertTrue(usuario.puedeComprar(sugerencia));
 	}
 
 	@Test
 	public void noPuedeComprarTest() { // El usuario no tiene suficiente dinero
-		Producto sugerencia = new Atraccion("Edoras", 60, 0.5, 2, "Aventura");
+		Producto sugerencia = new Atraccion(7, "Edoras", 60, 0.5, 2, "Aventura");
 		assertFalse(usuario.puedeComprar(sugerencia));
 	}
 	@Test
 	public void noPuedeComprarTest2() {// El usuario no tiene suficiente tiempo
-		Producto sugerencia = new Atraccion("Isengard", 5, 4, 2, "Aventura");
+		Producto sugerencia = new Atraccion(8, "Isengard", 5, 4, 2, "Aventura");
 		assertFalse(usuario.puedeComprar(sugerencia));
 	}
 	@Test

@@ -23,8 +23,8 @@ public class PromocionAbsolutaTest {
 
 	@Before
 	public void setup() {
-		atraccion1 = new Atraccion("Rivendel", 10, 2, 6, "Aventura");
-		atraccion2 = new Atraccion("Hobbiton", 15, 3.5, 8, "Aventura");
+		atraccion1 = new Atraccion(1, "Rivendel", 10, 2, 6, "Aventura");
+		atraccion2 = new Atraccion(2, "Hobbiton", 15, 3.5, 8, "Aventura");
 
 		pack.add(atraccion1);
 		pack.add(atraccion2);
@@ -75,8 +75,8 @@ public class PromocionAbsolutaTest {
 
 	@Test
 	public void noEstaIncluidaTest() {
-		Producto atraccionIncluida = new Atraccion("Rivendel", 10, 2, 6, "Aventura");
-		Producto atraccionNoIncluida = new Atraccion("Isengard", 10, 2.5, 23, "Aventura");
+		Producto atraccionIncluida = new Atraccion(1, "Rivendel", 10, 2, 6, "Aventura");
+		Producto atraccionNoIncluida = new Atraccion(2, "Isengard", 10, 2.5, 23, "Aventura");
 
 		assertTrue(promo.esOContiene(atraccionIncluida));
 		assertFalse(promo.esOContiene(atraccionNoIncluida));
