@@ -13,6 +13,9 @@ public class Itinerario {
 	private List<Producto> listaCompra = new ArrayList<Producto>();
 	private int costoItinerario = 0;
 	private double duracionItinerario = 0;
+	private int idUsuario;
+	private int idItinerario;
+	
 	
 	public String getItinerario() {
 		String listaArchivo = "";

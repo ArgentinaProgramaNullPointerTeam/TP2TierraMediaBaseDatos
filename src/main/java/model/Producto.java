@@ -29,11 +29,14 @@ public abstract class Producto {
 	//Devuelve String concatenado
 	public abstract String ofertas();
 	
+	//Retorna los cupos
 	public abstract int getCupo();
 		
-	
+	//Retorna si contiene dicho producto o no
 	public abstract boolean esOContiene(Producto otro);
 	
+	//Retorna el id
+	public abstract int getId();
 
 
 }

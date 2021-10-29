@@ -29,6 +29,7 @@ public class Atraccion extends Producto {
 		this.tipoAtraccion = tipoAtraccion;
 	}
 	
+	@Override
 	public int getId() {
 		return id;
 	}
