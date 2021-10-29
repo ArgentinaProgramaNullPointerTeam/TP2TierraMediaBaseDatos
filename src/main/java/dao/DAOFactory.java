@@ -10,7 +10,7 @@ public class DAOFactory {
 	}
 	
 	public static ItinerarioDAO getItinerarioDAO() {
-		return (ItinerarioDAO) new ItinerarioDAOImpl();
+		return new ItinerarioDAOImpl();
 	}
 
 }

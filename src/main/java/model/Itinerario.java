@@ -24,6 +24,15 @@ public class Itinerario {
 		}
 		return listaArchivo;
 	}
+	
+	public int getIdUsuario() {
+		return this.idUsuario;
+	}
+	
+	public int getIdItinerario() {
+		return this.idItinerario;
+	}
+	
 	public int getCostoItinerario() {
 		return this.costoItinerario;
 	}

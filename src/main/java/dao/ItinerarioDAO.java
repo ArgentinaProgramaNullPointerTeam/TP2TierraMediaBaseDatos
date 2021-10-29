@@ -1,8 +1,12 @@
 package dao;
 
+import java.awt.List;
+
 import model.Itinerario;
 
 public interface ItinerarioDAO extends GenericDAO<Itinerario> {
 
-	public abstract Itinerario findById(int id);
+	public abstract int findById(int id);
+	
+	public abstract List insert();
 }
