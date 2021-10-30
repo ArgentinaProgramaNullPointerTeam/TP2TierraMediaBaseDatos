@@ -5,18 +5,20 @@ import java.util.List;
 public class PromocionAbsoluta extends Promocion{
 	private String nombre;
 	private int cantAtracciones;
+	private int id;
 	private List<Atraccion> atracciones;
 	private String tipoPromocion;
 	private int descuento;
 	private double tiempoDeVisita;
 
-	public PromocionAbsoluta(String nombre, int cantAtracciones, List<Atraccion> atracciones, String tipoPromocion,
-			String descuento) {
+	public PromocionAbsoluta(int id,String nombre, int cantAtracciones, List<Atraccion> atracciones, String tipoPromocion,
+			int descuento) {
+		this.id= id;
 		this.nombre = nombre;
 		this.cantAtracciones = cantAtracciones;
 		this.atracciones = atracciones;
 		this.tipoPromocion = tipoPromocion;
-		this.descuento = Integer.parseInt(descuento);
+		this.descuento = descuento;
 	}
 
 	@Override
@@ -109,6 +111,11 @@ public class PromocionAbsoluta extends Promocion{
 			}
 		}
 		return cupo;
+	}
+
+	@Override
+	public int getId() {
+		return id;
 	}
 	
 }

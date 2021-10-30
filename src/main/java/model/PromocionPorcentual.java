@@ -6,19 +6,21 @@ public class PromocionPorcentual extends Promocion {
 
 	private String nombre;
 	private int cantAtracciones;
+	private int id;
 	private List<Atraccion> atracciones;
 	private String tipoPromocion;
 	private double descuento;
 	private int costoDeVisita;
 	private double tiempoDeVisita;
 
-	public PromocionPorcentual(String nombre, int cantAtracciones, List<Atraccion> atracciones, String tipoPromocion,
-			String descuento) {
+	public PromocionPorcentual(int id, String nombre, int cantAtracciones, List<Atraccion> atracciones, String tipoPromocion,
+			Double descuento) {
+		this.id= id;
 		this.nombre = nombre;
 		this.cantAtracciones = cantAtracciones;
 		this.atracciones = atracciones;
 		this.tipoPromocion = tipoPromocion;
-		this.descuento = Double.parseDouble(descuento);
+		this.descuento = descuento;
 	}
 
 	@Override
@@ -112,6 +114,11 @@ public class PromocionPorcentual extends Promocion {
 			}
 		}
 		return cupo;
+	}
+
+	@Override
+	public int getId() {
+		return id;
 	}
 	
 }

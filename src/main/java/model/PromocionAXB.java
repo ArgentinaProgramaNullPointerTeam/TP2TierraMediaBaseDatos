@@ -5,19 +5,21 @@ import java.util.List;
 public class PromocionAXB extends Promocion {
 	private String nombre;
 	private int cantAtracciones;
+	private int id;
 	private List<Atraccion> atracciones;
 	private String tipoPromocion;
-	private String descuento;
+	private int idAtraccionGratuita;
 	private int costoDeVisita;
 	private double tiempoDeVisita;
 
-	public PromocionAXB(String nombre, int cantAtracciones, List<Atraccion> atracciones, String tipoPromocion,
-			String descuento) {
+	public PromocionAXB(int id, String nombre, int cantAtracciones, List<Atraccion> atracciones, String tipoPromocion,
+			int descuento) {
+		this.id= id;
 		this.nombre = nombre;
 		this.cantAtracciones = cantAtracciones;
 		this.atracciones = atracciones;
 		this.tipoPromocion = tipoPromocion;
-		this.descuento = descuento;
+		this.idAtraccionGratuita = descuento;
 	}
 
 	@Override
@@ -99,9 +101,9 @@ public class PromocionAXB extends Promocion {
 		return costoDeVisita;
 	}
 
-	// Retorna el nombre de la atracción gratuita.
-	public String getDescuento() {
-		return this.descuento;
+	
+	public int getidAtraccionGratuita() {
+		return this.idAtraccionGratuita;
 	}
 
 	@Override
@@ -121,6 +123,11 @@ public class PromocionAXB extends Promocion {
 			}
 		}
 		return cupo;
+	}
+
+	@Override
+	public int getId() {
+		return id;
 	}
 	
 }
