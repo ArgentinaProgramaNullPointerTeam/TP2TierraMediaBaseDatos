@@ -29,7 +29,7 @@ public class PromocionPorcentualTest {
 		pack.add(atraccion1);
 		pack.add(atraccion2);
 
-		promo = new PromocionPorcentual("Pack 1", 2, pack, "Porcentual", "0.50");
+		promo = new PromocionPorcentual(1, "Pack 1", 2, pack, "Porcentual", 0.50);
 	}
 
 	@Test

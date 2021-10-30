@@ -37,18 +37,18 @@ public class ComparadorDeProductosTest {
 		List<Atraccion> packUno = new ArrayList<Atraccion>();
 		packUno.add(a1);
 		packUno.add(a2);
-		p1 = new PromocionAbsoluta("Pack uno", 2, packUno, "Absoluta", "10");
+		p1 = new PromocionAbsoluta(1, "Pack uno", 2, packUno, "Absoluta", 10);
 
 		List<Atraccion> packDos = new ArrayList<Atraccion>();
 		packDos.add(a1);
 		packDos.add(a3);
-		p2 = new PromocionPorcentual("Pack dos", 2, packDos, "Porcentual", "0.3");
+		p2 = new PromocionPorcentual(2, "Pack dos", 2, packDos, "Porcentual", 0.3);
 
 		List<Atraccion> packTres = new ArrayList<Atraccion>();
 		packTres.add(a1);
 		packTres.add(a3);
 		packTres.add(a2);
-		p3 = new PromocionAXB("Pack tres", 3, packTres, "AXB", "a3");
+		p3 = new PromocionAXB(3, "Pack tres", 3, packTres, "AXB", 3);
 
 	}
 
