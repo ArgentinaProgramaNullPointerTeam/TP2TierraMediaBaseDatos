@@ -61,10 +61,7 @@ public class App {
 				    }
 				    
 				    entradaUsuario="";
-				}else if(!cadaUsuario.puedeComprar(cadaProducto)) {
-					System.out.println("No puede adquirir: " +cadaProducto.getNombre() +
-							"\n porque no posee dinero o tiempo suficiente \n "
-							+ "o ya adquirio alguna atraccion anteriormente\n");
+				
 				}
 			}
 			
