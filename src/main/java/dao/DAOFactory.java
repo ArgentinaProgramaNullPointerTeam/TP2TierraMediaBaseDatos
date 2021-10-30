@@ -13,4 +13,8 @@ public class DAOFactory {
 		return new ItinerarioDAOImpl();
 	}
 
+	public static PromocionDAO getPromocionDAO() {
+		return new PromocionDAOImpl();
+	}
+
 }
