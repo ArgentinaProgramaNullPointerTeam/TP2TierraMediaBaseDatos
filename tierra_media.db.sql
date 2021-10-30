@@ -48,9 +48,9 @@ CREATE TABLE IF NOT EXISTS "promocion" (
 	"descuento_porcentual"	INTEGER,
 	"descuento_absoluta"	TEXT,
 	"tipo_atraccion"	INTEGER,
-	"atraccion1"	TEXT,
-	"atraccion2"	TEXT,
-	"atraccion3"	TEXT,
+	"atraccion1"	INT,
+	"atraccion2"	INT,
+	"atraccion3"	INT,
 	PRIMARY KEY("id_promocion" AUTOINCREMENT),
 	FOREIGN KEY("descuento_AXB") REFERENCES "atraccion"("id_atraccion")
 );
@@ -58,14 +58,14 @@ CREATE TABLE IF NOT EXISTS "promocion" (
 
 
 INSERT INTO promocion(nombre,tipo_promocion, descuento_porcentual, tipo_atraccion,atraccion1, atraccion2) VALUES
- ('Pack Aventura', 'Porcentual', '0.2','Aventura','Bosque Negro','Mordor');
+ ('Pack Aventura', 'Porcentual', '0.2','Aventura','8','4');
 
 INSERT INTO promocion(nombre,tipo_promocion, descuento_absoluta, tipo_atraccion,atraccion1, atraccion2) VALUES
-   ('Pack Degustacion', 'Absoluta', '36', 'Degustacion','Lothlórien','La comarca');
+   ('Pack Degustacion', 'Absoluta', '36', 'Degustacion','6','3');
 
 INSERT INTO promocion(nombre, tipo_promocion, descuento_AXB, tipo_atraccion, atraccion1, atraccion2, atraccion3) VALUES
-('Pack Paisaje', 'AXB', 7, 'Paisaje','Minas Tirith','Abismo de Helm','Erebor'),
-('Pack Aventura Recarcado', 'AXB', 9, 'Aventura', 'Bosque Negro','Mordor','La acotada');
+('Pack Paisaje', 'AXB', 7, 'Paisaje','2','5','7'),
+('Pack Aventura Recarcado', 'AXB', 9, 'Aventura', '8','4','9');
 
 
 CREATE TABLE IF NOT EXISTS "atraccionesPorPromocion" (
