@@ -65,7 +65,7 @@ INSERT INTO promocion(nombre,tipo_promocion, descuento_absoluta, tipo_atraccion,
 
 INSERT INTO promocion(nombre, tipo_promocion, descuento_AXB, tipo_atraccion, atraccion1, atraccion2, atraccion3) VALUES
 ('Pack Paisaje', 'AXB', 7, 'Paisaje','2','5','7'),
-('Pack Aventura Recarcado', 'AXB', 9, 'Aventura', '8','4','9');
+('Pack Aventura Recargado', 'AXB', 9, 'Aventura', '8','4','9');
 
 
 CREATE TABLE IF NOT EXISTS "atraccionesPorPromocion" (
@@ -75,6 +75,17 @@ CREATE TABLE IF NOT EXISTS "atraccionesPorPromocion" (
 	FOREIGN KEY("id_promocion") REFERENCES "promocion"("id_promocion")
 );
 
+INSERT INTO atraccionesPorPromocion(id_atraccion,id_promocion) VALUES
+   ('8', '1'),
+   ('4', '1'),
+   ('6', '2'),
+   ('3', '2'),
+   ('2', '3'),
+   ('5', '3'),
+   ('7', '3'),
+   ('8', '4'),
+   ('4', '4'),
+   ('9', '4');
 
 CREATE TABLE IF NOT EXISTS "itinerario" (
 	"id_itinerario"	INTEGER NOT NULL,
