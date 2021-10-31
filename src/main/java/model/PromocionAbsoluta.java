@@ -7,6 +7,7 @@ public class PromocionAbsoluta extends Promocion{
 	private int cantAtracciones;
 	private int id;
 	private List<Atraccion> atracciones;
+
 	private String tipoPromocion;
 	private int descuento;
 	private double tiempoDeVisita;
@@ -31,6 +32,10 @@ public class PromocionAbsoluta extends Promocion{
         return this.tipoPromocion;
 	}
 
+	public List<Atraccion> getAtracciones() {
+		return atracciones;
+	}
+	
 	@Override
 	public String toString() {
 		return this.nombre + " con  " + this.cantAtracciones + " atracciones " + this.atracciones;
