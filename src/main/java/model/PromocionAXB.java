@@ -63,6 +63,10 @@ public class PromocionAXB extends Promocion {
 		return this.atracciones.get(0).getTipoAtracciones();
 	}
 
+	public List<Atraccion> getAtracciones() {
+		return atracciones;
+	}
+	
 	@Override
 	public void restarCupo() {
 		for (Atraccion cadaAtraccion : atracciones) {
