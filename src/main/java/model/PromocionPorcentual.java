@@ -50,6 +50,10 @@ public class PromocionPorcentual extends Promocion {
 		return cupo;
 	}
 
+	public List<Atraccion> getAtracciones() {
+		return atracciones;
+	}
+	
 	@Override
 	public double getTiempoDeVisita() {
 		for (Atraccion cadaAtraccion : atracciones) {
