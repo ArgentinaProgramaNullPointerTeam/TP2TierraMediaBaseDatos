@@ -49,20 +49,20 @@ public class PromocionDAOImpl implements PromocionDAO {
 			if (atraccionesEnPromo.isEmpty()) {
 				throw new Error("La atracción no está en el listado de atracciones");
 			}
-            
-			model.Promocion promocion = null; 
-			if(resultados.getString(3).equals("Porcentual")) {
-				promocion= new model.PromocionPorcentual(resultados.getInt(1), resultados.getString(2), cantAtracciones, atraccionesEnPromo,
-						resultados.getString(3), resultados.getDouble(5));
-			}else if(resultados.getString(3).equals("Absoluta")) {
-				promocion= new  model.PromocionAbsoluta(resultados.getInt(1), resultados.getString(2), cantAtracciones, atraccionesEnPromo,
-						resultados.getString(3), resultados.getInt(4));
-			}else if(resultados.getString(3).equals("AXB")){
-				promocion= new  model.PromocionAXB(resultados.getInt(1), resultados.getString(2), cantAtracciones, atraccionesEnPromo,
-						resultados.getString(3), resultados.getInt(6));
+
+			model.Promocion promocion = null;
+			if (resultados.getString(3).equals("Porcentual")) {
+				promocion = new model.PromocionPorcentual(resultados.getInt(1), resultados.getString(2),
+						cantAtracciones, atraccionesEnPromo, resultados.getString(3), resultados.getDouble(5));
+			} else if (resultados.getString(3).equals("Absoluta")) {
+				promocion = new model.PromocionAbsoluta(resultados.getInt(1), resultados.getString(2), cantAtracciones,
+						atraccionesEnPromo, resultados.getString(3), resultados.getInt(4));
+			} else if (resultados.getString(3).equals("AXB")) {
+				promocion = new model.PromocionAXB(resultados.getInt(1), resultados.getString(2), cantAtracciones,
+						atraccionesEnPromo, resultados.getString(3), resultados.getInt(6));
 			}
 			return promocion;
-			
+
 		} catch (Exception e) {
 			throw new MissingDataException(e);
 		}
